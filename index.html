@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>IFOAD - Accueil</title>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+<style>
+
+.ujkz-title{
+  background: #2ea44f; /* vert */
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.ujkz-stats{
+  background: #e11c2a; /* rouge */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 10px;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.stat{
+  text-align: center;
+  max-width: 250px;
+}
+
+.stat h1{
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.stat p{
+  font-size: 20px;
+}
+</style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary position-relative">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="index.html">
+      <img src="ujkz.jpeg" width="50">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+      
+      </ul>
+    </div>
+
+    <img src="ifoad.jpeg" width="60"
+     style="position:absolute; right:15px; top:8px;">
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="Admission.html">Admission</a></li>
+        <li class="nav-item"><a class="nav-link" href="Actualite_et_Information.html">Actualités et Informations</a></li>
+        <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="Documentation.html">Documentation</a></li>
+        <li class="nav-item"><a class="nav-link" href="Etablissement.html">Etablissement</a></li>
+        <li class="nav-item"><a class="nav-link" href="Historique.html">Historique</a></li>
+        <li class="nav-item"><a class="nav-link" href="Formations.html">Formations</a></li>
+        <li class="nav-item"><a class="nav-link" href="Personnel.html">Personnels</a></li>
+        <li class="nav-item"><a class="nav-link" href="partenaires.html">Partenaires</a></li>
+        <li class="nav-item"><a class="nav-link" href="Programme.html">Programme</a></li>
+        <li class="nav-item"><a class="nav-link" href="Traitement.html">Traitement</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container mt-4">
+
+  <h1 class="text-center">Bienvenue à l’IFOAD - UJKZ</h1>
+
+  <p>
+    Message de bienvenue de la Directrice de l’IFOAD.
+    L’Institut de Formation Ouverte et À Distance a pour mission
+    de promouvoir l’enseignement supérieur à distance au Burkina Faso.
+  </p>
+
+</div>
+
+
+<div class="ujkz-title">
+  UJKZ en chiffres
+</div>
+
+<div class="ujkz-stats">
+
+  <div class="stat">
+    <h1 class="counter" data-target="50300">0</h1>
+    <p>Étudiants</p>
+  </div>
+
+  <div class="stat">
+    <h1 class="counter" data-target="1300">0</h1>
+    <p>Enseignants permanents<br>et vacataires</p>
+  </div>
+
+  <div class="stat">
+    <h1 class="counter" data-target="500">0</h1>
+    <p>Agents techniques et<br>administratifs</p>
+  </div>
+
+  <div class="stat">
+    <h1 class="counter" data-target="65">0</h1>
+    <p>Filières<br>(+130 options)</p>
+  </div>
+
+</div>
+
+
+<div class="container mt-4">
+  <p id="date" class="fw-bold"></p>
+</div>
+
+<script>
+document.getElementById("date").innerHTML =
+  "Date du jour : " + new Date().toLocaleDateString();
+</script>
+
+
+<script>
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+  const updateCount = () => {
+    const target = +counter.getAttribute('data-target');
+    const current = +counter.innerText;
+    const increment = target / 100;
+
+    if (current < target) {
+      counter.innerText = Math.ceil(current + increment);
+      setTimeout(updateCount, 20);
+    } else {
+      counter.innerText = "+" + target;
+    }
+  };
+  updateCount();
+});
+</script>
+
+
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
