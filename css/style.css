@@ -393,29 +393,65 @@
     }
 }
 /*** Header Carousel End ***/
+.card-green {
+    background-color: #198754; /* vert Bootstrap */
+    color: white;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.card-green:hover {
+    background-color: #157347;
+    transform: translateY(-5px);
+}
 
 /*** Single Page Hero Header Start ***/
-.bg-breadcrumb {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/carousel-1.jpg);
+
+/* Hero background principal */
+.bg-doc {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url(../img/BI.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 60px 0 60px 0;
+    padding: 100px 0;
 }
 
+
+.bg-Adm {
+    background: linear-gradient(rgba(29, 2, 2, 0.5), rgba(23, 1, 1, 0.5)),
+                url(../img/fle.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 135px 0;
+}
+
+
+/* Breadcrumb section */
+.bg-breadcrumb {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url(../img/carousel-1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 60px 0;
+}
+
+/* Liens breadcrumb */
 .bg-breadcrumb .breadcrumb-item a {
     color: var(--bs-white) !important;
 }
 
+/* Bande animée diagonale gauche */
 .bg-breadcrumb .bg-breadcrumb-single {
     position: absolute;
     width: 500px;
     height: 1200px;
-    top: 0px;
-    left: 0;
-    margin-left: 30px;
+    top: 0;
+    left: 30px;
     transform: rotate(-30deg);
     background: var(--bs-dark);
     animation: RotateMoveLeft 5s linear infinite;
@@ -423,7 +459,7 @@
     z-index: 2 !important;
 }
 
-
+/* Cercle animé */
 .bg-breadcrumb::before {
     content: "";
     position: absolute;
@@ -431,34 +467,52 @@
     height: 400px;
     top: -150px;
     right: -150px;
-    border-radius: 200px;
+    border-radius: 50%;
     border: 80px solid rgba(68, 210, 246, 0.2);
     animation: RotateMoveCircle 10s linear infinite;
     background: transparent;
     z-index: 2 !important;
 }
 
-@keyframes RotateMoveCircle {
-    0% {top: -200px;}
-    50%   {right: -100px;}
-    75%   {top: -100px;}
-    100%  {top: -200px;}
-}
-
-
+/* Bande animée diagonale droite */
 .bg-breadcrumb::after {
     content: "";
     position: absolute;
     width: 150px;
     height: 1200px;
     top: -150px;
-    left: 0;
-    margin-left: 160px;
+    left: 160px;
     transform: rotate(-30deg);
     background: rgba(68, 210, 246, 0.2);
     animation: RotateMoveRight 5s linear infinite;
     z-index: 2 !important;
 }
+
+/*** Keyframes Animations ***/
+
+/* Animation bande gauche */
+@keyframes RotateMoveLeft {
+    0%   { transform: rotate(-30deg) translateX(0); }
+    50%  { transform: rotate(-30deg) translateX(-50px); }
+    100% { transform: rotate(-30deg) translateX(0); }
+}
+
+/* Animation bande droite */
+@keyframes RotateMoveRight {
+    0%   { transform: rotate(-30deg) translateX(0); }
+    50%  { transform: rotate(-30deg) translateX(50px); }
+    100% { transform: rotate(-30deg) translateX(0); }
+}
+
+/* Animation cercle */
+@keyframes RotateMoveCircle {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    25%  { transform: translate(-50px, 30px) rotate(90deg); }
+    50%  { transform: translate(0, 60px) rotate(180deg); }
+    75%  { transform: translate(50px, 30px) rotate(270deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
 /*** Single Page Hero Header End ***/
 
 
