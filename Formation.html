@@ -41,30 +41,29 @@
         </div>
         <!-- Spinner End -->
 
+ <!-- Topbar Start -->
+<div class="container-fluid topbar px-0 d-none d-lg-block bg-light">
+    <div class="container px-0">
+        <div class="row gx-0 align-items-center" style="height: 50px;">
 
-        <!-- Topbar Start -->
-        <div class="container-fluid topbar px-0 d-none d-lg-block">
-            <div class="container px-0">
-                <div class="row gx-0 align-items-center" style="height: 45px;">
-                    <div class="col-lg-8 text-center text-lg-start mb-lg-0">
-                        <div class="d-flex flex-wrap">
-                            <a href="#" class="text-muted me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
-                            <a href="#" class="text-muted me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
-                            <a href="#" class="text-muted me-0"><i class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 text-center text-lg-end">
-                        <div class="d-flex align-items-center justify-content-end">
-                            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i class="fab fa-facebook-f text-white"></i></a>
-                            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i class="fab fa-twitter text-white"></i></a>
-                            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i class="fab fa-instagram text-white"></i></a>
-                            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-0"><i class="fab fa-linkedin-in text-white"></i></a>
-                        </div>
+            <!-- Bande de bienvenue -->
+            <div class="col-lg-8 text-center text-lg-start">
+                <div class="overflow-hidden">
+                    <div class="text-primary fw-bold bienvenue-text">
+                        Bienvenue à la page  Contact rentrez en contact avec nous pour toute question ou demande d'information sur l'IFOAD - Université Joseph Ki-Zerbo
                     </div>
                 </div>
             </div>
+
+            <!-- Date automatique -->
+            <div class="col-lg-4 text-center text-lg-end">
+                <span id="dateActuelle" class="fw-bold text-dark"></span>
+            </div>
+
         </div>
-        <!-- Topbar End -->
+    </div>
+</div>
+<!-- Topbar End -->
 
 
         <!-- Navbar & Hero Start -->
@@ -124,7 +123,8 @@
                                     <a href="Documentation.html" class="dropdown-item">Documentation</a>
                                     <a href="Traitement.html" class="dropdown-item">Traitement</a>
                                     <a href="Adminission.html" class="dropdown-item">Adminission</a>
-                                    <a href="https://www.ifoad-ujkz.net/formationenligne/calendar/import.php?" class="dropdown-item">Programme</a>
+                                    <a href="Programme.html" class="dropdown-item">Programme</a>
+                                    <a href="Les universités publique.html" class="dropdown-item">Les universités publique</a>
                                    <a href="Actualités et Informations.html" class="dropdown-item">Actualités et informations</a>
                                 </div>
                             </div>
@@ -159,14 +159,20 @@
         </div>
         <!-- Modal Search End -->
 
-        <!-- Header Start -->
+       <!-- Header Start -->
+       <div class="container-fluid bg-Adm">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">
+           NOS FORMATIONS
+        </h4>
+    </div>
+</div>
+        <!-- Header End -->
         
-    <!-- FAQ Start -->
+    <!-- Formation Start -->
     <div id="ifoad" class="container-fluid faq py-5">
         <div class="container py-5">
-            <div class="pb-5">
-                <h1 class="display-4">IFOAD</h1>
-            </div>
+           
 
              <div class="container my-5">
     <div class="row justify-content-center">
@@ -271,7 +277,9 @@
             </div>
         </div>
     </div>
-    <!-- FAQ End -->
+    <!-- Formation End -->
+
+    <!-- detail de la formation start -->
     <div class="container my-5">
         <div class="card border-success">
             <div class="card-header bg-success text-white text-center fw-bold">
@@ -340,7 +348,64 @@
             </div>
         </div>
         
-        <!-- Team End -->
+        <!-- detail de la formation End -->
+
+        
+        <!-- Temoignage Start -->
+
+       <div id="temoignage" class="container-fluid testimonial bg-light py-5">
+    <div class="container py-5">
+        <div class="row g-4 align-items-center">
+            <div class="col-xl-4 wow fadeInLeft" data-wow-delay="0.1s">
+                <div class="h-100 rounded">
+                    <h1 class="display-4 mb-4">Témoignages</h1>
+                    <p class="mb-4">Découvrez des témoignages d'étudiants et professionnels formés à l'IFOAD, illustrant l'impact de nos parcours sur leur carrière.</p>
+                    <a href="#" class="btn btn-success rounded-pill text-white py-3 px-5">Tous les témoignages <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+            
+            <div class="col-xl-8">
+                <div class="testimonial-carousel owl-carousel wow fadeInUp" data-wow-delay="0.1s">
+                    
+                    <div class="testimonial-item bg-white rounded p-4">
+                        <div class="d-flex">
+                            <div><i class="fas fa-quote-left fa-3x text-danger me-3"></i></div>
+                            <p class="mt-4">Grâce à l’IFOAD, j’ai acquis de solides compétences en développement et gestion de projet. Formation pratique et encadrée !</p>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <div class="my-auto text-end">
+                                <h5>Abner Lawadoen PARE</h5>
+                                <p class="mb-0">Développeur full-stack</p>
+                            </div>
+                            <div class="bg-white rounded-circle ms-3">
+                                <img src="image/pare.jpeg" class="rounded-circle p-2" style="width: 80px; height: 80px; border: 1px solid var(--bs-primary);" alt="Abner">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-item bg-white rounded p-4">
+                        <div class="d-flex">
+                            <div><i class="fas fa-quote-left fa-3x text-danger me-3"></i></div>
+                            <p class="mt-4">La formation en dev web et mobile m’a permis d’apprendre à mon rythme. Les projets pratiques m'ont beaucoup aidé.</p>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <div class="my-auto text-end">
+                                <h5>Issaka SIA</h5>
+                                <p class="mb-0">en cours de formation</p>
+                            </div>
+                            <div class="bg-white rounded-circle ms-3">
+                                <img src="image/i.jpeg" class="rounded-circle p-2" style="width: 80px; height: 80px; border: 1px solid var(--bs-primary);" alt="Issaka">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- Temoignage End -->
+
 
      
         <!-- Footer Start -->

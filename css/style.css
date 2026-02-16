@@ -72,6 +72,19 @@
     border-radius: 50%;
 }
 
+table { border-collapse: collapse; width: 70%; margin: 20px auto; } th, td { border: 1px solid #333; padding: 10px; text-align: left; } th { background-color: #f2f2f2; } h1 { text-align: center; }
+.bienvenue-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: defilement 15s linear infinite;
+}
+
+@keyframes defilement {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+
 .btn.btn-primary {
     background: var(--bs-primary) !important;
     color: var(--bs-white) !important;

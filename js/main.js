@@ -136,6 +136,186 @@
         return false;
     });
 
+   
+
 
 })(jQuery);
+document.addEventListener("DOMContentLoaded", function () { var dateElement = document.getElementById("dateActuelle"); if (dateElement) { var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }; var today = new Date(); dateElement.textContent = today.toLocaleDateString('fr-FR', options); } });
+
+
+   // ===============================
+// Affichage dynamique des champs
+// ===============================
+function afficherChamps() {
+
+    let choix = document.getElementById("fonction").value;
+    let champs = document.getElementById("champs");
+    champs.innerHTML = "";
+
+    if (choix === "addition" || choix === "multiplication") {
+        champs.innerHTML = `
+            <input type="number" id="a" class="form-control mb-2" placeholder="Premier nombre">
+            <input type="number" id="b" class="form-control" placeholder="Deuxième nombre">
+        `;
+    }
+
+    else if (choix === "carre" || choix === "racine" || choix === "aire") {
+        champs.innerHTML = `
+            <input type="number" id="a" class="form-control" placeholder="Entrez un nombre">
+        `;
+    }
+
+    else if (choix === "moyenne") {
+        champs.innerHTML = `
+            <input type="number" id="a" class="form-control mb-2" placeholder="Nombre 1">
+            <input type="number" id="b" class="form-control mb-2" placeholder="Nombre 2">
+            <input type="number" id="c" class="form-control" placeholder="Nombre 3">
+        `;
+    }
+
+    else if (choix === "equation") {
+        champs.innerHTML = `
+            <input type="number" id="a" class="form-control mb-2" placeholder="Coefficient a">
+            <input type="number" id="b" class="form-control mb-2" placeholder="Coefficient b">
+            <input type="number" id="c" class="form-control" placeholder="Coefficient c">
+        `;
+    }
+}
+
+
+// ===============================
+// Fonction principale de calcul
+// ===============================
+function calculer() {
+
+    let choix = document.getElementById("fonction").value;
+    let resultat = document.getElementById("resultat");
+
+    resultat.style.display = "block";
+    resultat.className = "alert mt-4 text-center fw-bold";
+
+    if (!choix) {
+        resultat.classList.add("alert-danger");
+        resultat.innerHTML = "Veuillez choisir une fonction.";
+        return;
+    }
+
+    let res;
+
+    try {
+
+        // ------------------
+        // ADDITION
+        // ------------------
+        if (choix === "addition") {
+
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+
+            if (isNaN(a) || isNaN(b)) throw "Champ vide";
+
+            res = a + b;
+        }
+
+        // ------------------
+        // MULTIPLICATION
+        // ------------------
+        else if (choix === "multiplication") {
+
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+
+            if (isNaN(a) || isNaN(b)) throw "Champ vide";
+
+            res = a * b;
+        }
+
+        // ------------------
+        // CARRE
+        // ------------------
+        else if (choix === "carre") {
+
+            let a = parseFloat(document.getElementById("a").value);
+
+            if (isNaN(a)) throw "Champ vide";
+
+            res = a * a;
+        }
+
+        // ------------------
+        // RACINE
+        // ------------------
+        else if (choix === "racine") {
+
+            let a = parseFloat(document.getElementById("a").value);
+
+            if (isNaN(a)) throw "Champ vide";
+            if (a < 0) throw "Nombre négatif impossible";
+
+            res = Math.sqrt(a);
+        }
+
+        // ------------------
+        // MOYENNE
+        // ------------------
+        else if (choix === "moyenne") {
+
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let c = parseFloat(document.getElementById("c").value);
+
+            if (isNaN(a) || isNaN(b) || isNaN(c)) throw "Champ vide";
+
+            res = (a + b + c) / 3;
+        }
+
+        // ------------------
+        // AIRE DU CERCLE
+        // ------------------
+        else if (choix === "aire") {
+
+            let a = parseFloat(document.getElementById("a").value);
+
+            if (isNaN(a)) throw "Champ vide";
+
+            res = Math.PI * a * a;
+        }
+
+        // ------------------
+        // EQUATION 2nd DEGRE
+        // ------------------
+        else if (choix === "equation") {
+
+            let A = parseFloat(document.getElementById("a").value);
+            let B = parseFloat(document.getElementById("b").value);
+            let C = parseFloat(document.getElementById("c").value);
+
+            if (isNaN(A) || isNaN(B) || isNaN(C)) throw "Champ vide";
+            if (A === 0) throw "Ce n'est pas une équation du second degré";
+
+            let delta = B * B - 4 * A * C;
+
+            if (delta < 0) {
+                res = "Pas de solution réelle";
+            }
+            else if (delta === 0) {
+                res = "Une solution : " + (-B / (2 * A));
+            }
+            else {
+                let x1 = (-B + Math.sqrt(delta)) / (2 * A);
+                let x2 = (-B - Math.sqrt(delta)) / (2 * A);
+                res = "Deux solutions : " + x1 + " et " + x2;
+            }
+        }
+
+        resultat.classList.add("alert-success");
+        resultat.innerHTML = "Résultat : " + res;
+
+    } catch (error) {
+
+        resultat.classList.add("alert-danger");
+        resultat.innerHTML = "Erreur : " + error;
+    }
+}
+
 

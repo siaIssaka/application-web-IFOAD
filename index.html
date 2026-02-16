@@ -31,6 +31,8 @@
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
     </head>
+    <script src="js/main.js"></script>
+
 
     <body>
 
@@ -43,29 +45,33 @@
         <!-- Spinner End -->
 
 
-        <!-- Topbar Start -->
-        <div class="container-fluid topbar px-0 d-none d-lg-block">
-            <div class="container px-0">
-                <div class="row gx-0 align-items-center" style="height: 45px;">
-                    <div class="col-lg-8 text-center text-lg-start mb-lg-0">
-                        <div class="d-flex flex-wrap">
-                            <a href="#" class="text-muted me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
-                            <a href="#" class="text-muted me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
-                            <a href="#" class="text-muted me-0"><i class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 text-center text-lg-end">
-                        <div class="d-flex align-items-center justify-content-end">
-                            <a href="https://web.facebook.com/UniversiteJKZ" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i class="fab fa-facebook-f text-white"></i></a>
-                            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i class="fab fa-twitter text-white"></i></a>
-                            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i class="fab fa-instagram text-white"></i></a>
-                            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-0"><i class="fab fa-linkedin-in text-white"></i></a>
-                        </div>
+   <!-- Topbar Start -->
+<div class="container-fluid topbar px-0 bg-light">
+
+
+    <div class="container px-0">
+        <div class="row gx-0 align-items-center" style="height: 50px;">
+
+            <!-- Bande de bienvenue -->
+            <div class="col-12 col-lg-8 text-center text-lg-start">
+                <div class="overflow-hidden">
+                    <div class="text-primary fw-bold bienvenue-text">
+                        Bienvenue à la page d'accueil de l'IFOAD - Université Joseph Ki-Zerbo | Formation d'excellence en ligne et en présentiel
                     </div>
                 </div>
             </div>
+
+            <!-- Date automatique -->
+            <div class="col-12 col-lg-4 text-center text-lg-end mt-2 mt-lg-0">
+                <span id="dateActuelle" class="fw-bold text-dark"></span>
+            </div>
+
         </div>
-        <!-- Topbar End -->
+    </div>
+</div>
+
+<!-- Topbar End -->
+
 
 
         <!-- Navbar & Hero Start -->
@@ -125,7 +131,8 @@
                                     <a href="Documentation.html" class="dropdown-item">Documentation</a>
                                     <a href="Traitement.html" class="dropdown-item">Traitement</a>
                                     <a href="Adminission.html" class="dropdown-item">Adminission</a>
-                                    <a href="https://www.ifoad-ujkz.net/formationenligne/calendar/import.php?" class="dropdown-item">Programme</a>
+                                    <a href="Programme.html" class="dropdown-item">Programme</a>
+                                    <a href="Les universités publique.html" class="dropdown-item">Les universités publique</a>
                                    <a href="Actualités et Informations.html" class="dropdown-item">Actualités et informations</a>
                                 </div>
                             </div>
@@ -147,32 +154,37 @@
         <div class="header-carousel owl-carousel">
             <div class="header-carousel-item">
                 <div class="header-carousel-item-img-1">
-                    <img src="image/carousel-1.JPEG" class="img-fluid w-100" alt="Image">
+                    <img src="image/ac.jpg" class="img-fluid w-100" alt="Image">
                 </div>
-                <div class="carousel-caption">
+                <div class="carousel-caption"style="top: -10%;">
                     <div class="carousel-caption-inner text-start p-3">
                         <h1 class="display-1 text-capitalize text-white mb-4 fadeInUp animate__animated" data-animation="fadeInUp" data-delay="1.3s" style="animation-delay: 1.3s;">Madame la directrice de l'ifoad vous souhaite la bienvenue.</h1>
-                        <p class="mb-5 fs-5 fadeInUp animate__animated" data-animation="fadeInUp" data-delay="1.5s" style="animation-delay: 1.5s;"> À l’IFOAD, vous n’apprenez pas seulement l’informatique,<br>
-                        vous devenez acteur de l’innovation numérique. 
+                        <p class="mb-5 fs-5 fadeInUp animate__animated" data-animation="fadeInUp" data-delay="1.5s" style="animation-delay: 1.5s;"> Intitution de Formation Ouverte à Distance de l'Université Joseph Ki-Zerbo, Burkina Faso. 
                         </p>
-                        <a class="btn btn-primary rounded-pill py-3 px-5 mb-4 me-4 fadeInUp animate__animated" data-animation="fadeInUp" data-delay="1.5s" style="animation-delay: 1.7s;" href="#">Apply Now</a>
-                        <a class="btn btn-dark rounded-pill py-3 px-5 mb-4 fadeInUp animate__animated" data-animation="fadeInUp" data-delay="1.5s" style="animation-delay: 1.7s;" href="#">Read More</a>
+                        <a class="btn btn-primary rounded-pill py-3 px-5 mb-4 me-4 fadeInUp animate__animated" data-animation="fadeInUp" data-delay="1.5s" style="animation-delay: 1.7s;" href="#">récommencer</a>
+                        <a class="btn btn-dark rounded-pill py-3 px-5 mb-4 fadeInUp animate__animated" data-animation="fadeInUp" data-delay="1.5s" style="animation-delay: 1.7s;" href="#">lire plus</a>
                     </div>
                 </div>
             </div>
             <div class="header-carousel-item mx-auto">
                 <div class="header-carousel-item-img-2">
-                    <img src="image/1.JPEG" class="img-fluid w-100" alt="Image">
+                    <img src="image/CI.jpg" class="img-fluid w-100" alt="Image">
                 </div>
-                <div class="carousel-caption">
-                    <div class="carousel-caption-inner text-center p-3">
-                        <h1 class="display-1 text-capitalize text-white mb-4"> most prestigious Investments company in worldwide.</h1>
-                        <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                        </p>
-                        <a class="btn btn-primary rounded-pill py-3 px-5 mb-4 me-4" href="#">Apply Now</a>
-                        <a class="btn btn-dark rounded-pill py-3 px-5 mb-4" href="#">Read More</a>
-                    </div>
-                </div>
+               <div class="carousel-caption"style="top: -20%;">
+    <div class="carousel-caption-inner text-center p-3">
+        <h1 class="display-3 text-capitalize text-white mb-4 fadeInUp animate__animated" 
+            data-animation="fadeInUp" data-delay="1.3s" style="animation-delay: 1.3s;">
+            À l’IFOAD, vous n’apprenez pas seulement l’informatique,
+            vous devenez acteur de l’innovation numérique. 
+        </h1>
+        <p class="mb-5 fs-5">
+           Institution de Formation Ouverte à Distance de l'Université Joseph Ki-Zerbo, Burkina Faso.
+        </p>
+        <a class="btn btn-primary rounded-pill py-3 px-5 mb-4 me-4" href="#">récommencer</a>
+        <a class="btn btn-dark rounded-pill py-3 px-5 mb-4" href="#">lire plus</a>
+    </div>
+</div>
+
             </div>
           
         </div>
@@ -189,60 +201,6 @@
 
 
 
-
-        <!-- Testimonial Start -->
-       <div id="temoignage" class="container-fluid testimonial bg-light py-5">
-    <div class="container py-5">
-        <div class="row g-4 align-items-center">
-            <div class="col-xl-4 wow fadeInLeft" data-wow-delay="0.1s">
-                <div class="h-100 rounded">
-                    <h1 class="display-4 mb-4">Témoignages</h1>
-                    <p class="mb-4">Découvrez des témoignages d'étudiants et professionnels formés à l'IFOAD, illustrant l'impact de nos parcours sur leur carrière.</p>
-                    <a href="#" class="btn btn-success rounded-pill text-white py-3 px-5">Tous les témoignages <i class="fas fa-arrow-right ms-2"></i></a>
-                </div>
-            </div>
-            
-            <div class="col-xl-8">
-                <div class="testimonial-carousel owl-carousel wow fadeInUp" data-wow-delay="0.1s">
-                    
-                    <div class="testimonial-item bg-white rounded p-4">
-                        <div class="d-flex">
-                            <div><i class="fas fa-quote-left fa-3x text-danger me-3"></i></div>
-                            <p class="mt-4">Grâce à l’IFOAD, j’ai acquis de solides compétences en développement et gestion de projet. Formation pratique et encadrée !</p>
-                        </div>
-                        <div class="d-flex justify-content-end">
-                            <div class="my-auto text-end">
-                                <h5>Abner Lawadoen PARE</h5>
-                                <p class="mb-0">Développeur full-stack</p>
-                            </div>
-                            <div class="bg-white rounded-circle ms-3">
-                                <img src="img/abner.jpeg" class="rounded-circle p-2" style="width: 80px; height: 80px; border: 1px solid var(--bs-primary);" alt="Abner">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item bg-white rounded p-4">
-                        <div class="d-flex">
-                            <div><i class="fas fa-quote-left fa-3x text-danger me-3"></i></div>
-                            <p class="mt-4">La formation en dev web et mobile m’a permis d’apprendre à mon rythme. Les projets pratiques m'ont beaucoup aidé.</p>
-                        </div>
-                        <div class="d-flex justify-content-end">
-                            <div class="my-auto text-end">
-                                <h5>Issaka SIA</h5>
-                                <p class="mb-0">Développeur full-stack</p>
-                            </div>
-                            <div class="bg-white rounded-circle ms-3">
-                                <img src="img/i.jpg" class="rounded-circle p-2" style="width: 80px; height: 80px; border: 1px solid var(--bs-primary);" alt="Issaka">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-        <!-- Testimonial End -->
 
 
  <!-- Footer Start -->
